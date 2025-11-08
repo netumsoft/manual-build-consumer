@@ -1,3 +1,7 @@
 # Sphinx 缓存
 .doctrees/
 **/.doctrees/
+
+# locales
+locales/
+**/locales/

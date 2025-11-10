@@ -48,7 +48,7 @@
     <div id="qrcode"></div>
     <script>
         function generateCodes(text) {
-            var cmd="%IOTPUBTP#"+text+"#";
+            var cmd="AT+MQTTPORT="+text;
 			// 清空旧的二维码和条形码
             $("#qrcode").empty();
 

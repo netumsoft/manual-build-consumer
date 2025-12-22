@@ -76,7 +76,7 @@
 				return;
 			}
             var mode = text3.startsWith("https") ? 1 : 0;
-            var cmd = "AT+URL="+mode+","+parsedUrl.hostname+","+parsedUrl.pathname+";AT+RAP="+text1;
+            var cmd = "AT+URL="+mode+","+parsedUrl.host+","+parsedUrl.pathname+";AT+RAP="+text1;
             if (text2) {
                 cmd += "," + text2;
             }

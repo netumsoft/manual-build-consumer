@@ -78,6 +78,7 @@ tcpclient.md
 tcpserver.md
 mqtt.md
 http.md
+awsiot.md
 ```
 ## Network Configuration
 ```{toctree}

@@ -2,7 +2,7 @@
 ```{toctree}
 :maxdepth: 2
 
-🛒Buy Now <https://www.netum.net/products/netum-a5-automatic-omnidirectional-desktop-barcode-scanner-hands-free-usb-wired-qr-barcode-reader-1d-2d-bar-code-image-sensing-for-warehouse-supermarket-retail-store-bookstore-pos-system>
+🛒Buy Now <https://www.netum.net/products/netum-wireless-wi-fi-2d-barcode-scanner-connect-with-tcp-udp-network-protocols-hands-free-automatic-sensing-bar-code-reader-1d-2d-qr-pdf417-scan-gun-suitable-for-inventory-pos-industry-ds2800>
 system.md
 working.md
 wireless.md

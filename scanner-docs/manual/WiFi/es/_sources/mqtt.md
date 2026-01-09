@@ -27,7 +27,7 @@ EMQX open source version, download address: [EMQX](https://github.com/emqx/emqx/
 
 ### Configure WiFi and Broker
 ```{raw} html
-    <iframe src="../../plugins/wifi-mqtt.html" height="900px" width="100%"></iframe>
+    <iframe src="../../plugins/wifi-mqtt.html" height="1100px" width="100%"></iframe>
 ```
 
 ```{note}

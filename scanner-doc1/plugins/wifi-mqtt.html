@@ -71,6 +71,11 @@
         <input type="text" id="inputText6" placeholder="Publish topic" value="WFSCAN">
     </div>
     
+    <div class="input-group">
+        <label for="inputText7">QoS</label>
+        <input type="number" id="inputText7" placeholder="QoS" value="2" min="0" max="2" step="1">
+    </div>
+    
     <div id="qrcode"></div>
     
     <script>
@@ -81,12 +86,15 @@
             var text4 = $("#inputText4").val();
             var text5 = $("#inputText5").val();
             var text6 = $("#inputText6").val();
+            var text7 = $("#inputText7").val();
 
             $("#qrcode").empty(); // 清空旧的二维码
-            if (!text1 || !text3 || !text6) {
+            if (!text1 || !text3 || !text6 || !text7) {
                 return; // 不生成二维码
             }
-            var cmd = "AT+URL=2,"+text3+","+text4+","+text5+","+text6+";AT+RAP="+text1;
+            
+
+            var cmd = "AT+URL=2,"+text3+","+text4+","+text5+","+text6+","+text7+";AT+RAP="+text1;
             if (text2) {
                 cmd += "," + text2;
             }
@@ -102,6 +110,22 @@
         $(document).ready(function() {
             // 默认生成
             generateCodes();
+            $("#inputText7").on("input change blur", function () {
+                let v = $(this).val();
+
+                // 空值允许先不处理（或你也可以强制默认 0/2）
+                if (v === "") return;
+
+                // 转成整数（避免 1.5 之类）
+                v = parseInt(v, 10);
+                if (Number.isNaN(v)) v = 0;  
+
+                // 限制到 0-2
+                if (v < 0) v = 0;  
+                if (v > 2) v = 2; 
+  
+                $(this).val(v);
+            });
 
             // 监听输入框的变化
             $("input").on("input", function() {

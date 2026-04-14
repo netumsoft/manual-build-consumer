@@ -17,7 +17,7 @@
         gtag('config', 'G-K4FLCEP0X8');
     </script>
     
-    <title>Use MQTTs protocol to transfer data to AWS IoT &#8212; WiFi Scanner User Manual</title>
+    <title>Используйте протокол MQTT для передачи данных в AWS IoT. &#8212; WiFi Scanner User Manual</title>
   
   
   
@@ -54,9 +54,6 @@
     <script src="_static/copybutton.js?v=f281be69"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="_static/translations.js?v=cd1d70c9"></script>
-    <script defer="defer" src="https://unpkg.com/@popperjs/core@2"></script>
-    <script defer="defer" src="https://unpkg.com/tippy.js@6"></script>
-    <script defer="defer" src="_static/tippy\awsiot.4514f3da-a45a-4326-9957-cbdb1a33fa2e.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'awsiot';</script>
     <link rel="index" title="Алфавитный указатель" href="genindex.html" />
     <link rel="search" title="Поиск" href="search.html" />
@@ -262,6 +259,17 @@
           
           
           
+          <a href="../el" title="Greek" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="./media/gr.png" class="icon-link-image" alt="Greek"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
           <a href="https://crowdin.com/project/scanner-docs" title="Crowdin" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="https://badges.crowdin.net/scanner-docs/localized.svg" class="icon-link-image" alt="Crowdin"/></a>
         </li>
 </ul></div>
@@ -279,7 +287,6 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://www.netum.net/products/netum-a5-automatic-omnidirectional-desktop-barcode-scanner-hands-free-usb-wired-qr-barcode-reader-1d-2d-bar-code-image-sensing-for-warehouse-supermarket-retail-store-bookstore-pos-system">🛒Купить сейчас</a></li>
 <li class="toctree-l1"><a class="reference internal" href="system.html">Системные настройки</a></li>
 <li class="toctree-l1"><a class="reference internal" href="working.html">Рабочий режим</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="wireless.html">Режим передачи Wi-Fi</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -287,7 +294,7 @@
 <li class="toctree-l2"><a class="reference internal" href="tcpserver.html">Использование TCP сервера для передачи данных</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mqtt.html">Использовать протокол MQTT для передачи данных</a></li>
 <li class="toctree-l2"><a class="reference internal" href="http.html">Использовать HTTP протокол для передачи данных</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Use MQTTs protocol to transfer data to AWS IoT</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Используйте протокол MQTT для передачи данных в AWS IoT.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="network.html">Конфигурация сети</a></li>
 </ul>
 </details></li>
@@ -432,7 +439,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Use MQTTs protocol to transfer data to AWS IoT</h1>
+    <h1>Используйте протокол MQTT для передачи данных в AWS IoT.</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -442,16 +449,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#register-your-device-on-the-aws-iot-page-to-obtain-the-client-certificate-and-private-key">Register your device on the AWS IoT page to obtain the client certificate and private key.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-scanner">Configure Scanner</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-mqtt-mode">Set MQTT mode</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-mqtt-port-to-8883">Set MQTT Port to 8883</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-client-certificate">Set Client Certificate</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-private-key">Set Private Key</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-wifi-and-broker">Configure WiFi and Broker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#register-your-device-on-the-aws-iot-page-to-obtain-the-client-certificate-and-private-key">Зарегистрируйте свое устройство на странице AWS IoT, чтобы получить клиентский сертификат и закрытый ключ.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-scanner">Настройка сканера</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-mqtt-mode">Установить режим MQTT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-mqtt-port-to-8883">Установите порт MQTT на 8883.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-client-certificate">Установить клиентский сертификат</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-private-key">Установить закрытый ключ</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-wifi-and-broker">Настройка Wi-Fi и брокера</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mqtt-test-client">MQTT test client</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mqtt-test-client">Тестовый клиент MQTT</a></li>
 </ul>
             </nav>
         </div>
@@ -464,44 +471,44 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="use-mqtts-protocol-to-transfer-data-to-aws-iot">
-<h1>Use MQTTs protocol to transfer data to AWS IoT<a class="headerlink" href="#use-mqtts-protocol-to-transfer-data-to-aws-iot" title="Ссылка на этот заголовок">#</a></h1>
+<h1>Используйте протокол MQTT для передачи данных в AWS IoT.<a class="headerlink" href="#use-mqtts-protocol-to-transfer-data-to-aws-iot" title="Ссылка на этот заголовок">#</a></h1>
 <section id="register-your-device-on-the-aws-iot-page-to-obtain-the-client-certificate-and-private-key">
-<h2>Register your device on the AWS IoT page to obtain the client certificate and private key.<a class="headerlink" href="#register-your-device-on-the-aws-iot-page-to-obtain-the-client-certificate-and-private-key" title="Ссылка на этот заголовок">#</a></h2>
+<h2>Зарегистрируйте свое устройство на странице AWS IoT, чтобы получить клиентский сертификат и закрытый ключ.<a class="headerlink" href="#register-your-device-on-the-aws-iot-page-to-obtain-the-client-certificate-and-private-key" title="Ссылка на этот заголовок">#</a></h2>
 <ul class="simple">
-<li><p>Click on <a class="reference external" href="https://us-east-1.console.aws.amazon.com/iot/home?region=us-east-1#/thinghub">Things</a> to enter the page.</p></li>
+<li><p>Нажмите на <a class="reference external" href="https://us-east-1.console.aws.amazon.com/iot/home?region=us-east-1#/thinghub">Вещи</a>, чтобы перейти на страницу.</p></li>
 </ul>
 <figure class="align-center">
 <img alt="../../media/awsiot-things.png" src="../../media/awsiot-things.png" />
 </figure>
 <ul class="simple">
-<li><p>Click on <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">Things</span></code> to go to the creation page.</p></li>
+<li><p>Нажмите на кнопку «Создать объект», чтобы перейти на страницу создания.</p></li>
 </ul>
 <figure class="align-center">
 <img alt="../../media/awsiot-things1.png" src="../../media/awsiot-things1.png" />
 </figure>
 <ul class="simple">
-<li><p>Click <code class="docutils literal notranslate"><span class="pre">Next</span></code> to go to Specify things properties</p></li>
+<li><p>Нажмите «Далее», чтобы перейти к свойствам «Указать параметры».</p></li>
 </ul>
 <figure class="align-center">
 <img alt="../../media/awsiot-things2.png" src="../../media/awsiot-things2.png" />
 </figure>
 <ul class="simple">
-<li><p>After entering the Thing name, click <code class="docutils literal notranslate"><span class="pre">Next</span></code> to proceed to Configure device certificate.</p></li>
+<li><p>После ввода имени устройства нажмите «Далее», чтобы перейти к настройке сертификата устройства.</p></li>
 </ul>
 <figure class="align-center">
 <img alt="../../media/awsiot-things3.png" src="../../media/awsiot-things3.png" />
 </figure>
 <ul class="simple">
-<li><p>Click <code class="docutils literal notranslate"><span class="pre">Next</span></code> to go to Attach policies to certificate</p></li>
+<li><p>Нажмите «Далее», чтобы перейти к разделу «Прикрепить политики к сертификату».</p></li>
 </ul>
 <figure class="align-center">
 <img alt="../../media/awsiot-things4.png" src="../../media/awsiot-things4.png" />
 </figure>
 <ul class="simple">
-<li><p>Click <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">policy</span></code> to enter the Create policy page, enter a policy name, copy the content below into the JSON input box, and click <code class="docutils literal notranslate"><span class="pre">Create</span></code> to complete the creation.</p></li>
+<li><p>Нажмите «Создать политику», чтобы перейти на страницу создания политики, введите название политики, скопируйте приведенное ниже содержимое в поле ввода JSON и нажмите «Создать», чтобы завершить создание.</p></li>
 </ul>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">Policy document</span><a class="headerlink" href="#id1" title="Ссылка на этот код">#</a></div>
+<div class="code-block-caption"><span class="caption-text">Политический документ</span><a class="headerlink" href="#id1" title="Ссылка на этот код">#</a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">{</span>
 <span class="hll"><span class="linenos"> 2</span><span class="w">  </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
 </span><span class="hll"><span class="linenos"> 3</span><span class="w">  </span><span class="nt">&quot;Statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
@@ -533,13 +540,13 @@ document.write(`
 <img alt="../../media/awsiot-things5.png" src="../../media/awsiot-things5.png" />
 </figure>
 <ul class="simple">
-<li><p>Return to the <code class="docutils literal notranslate"><span class="pre">Attach</span> <span class="pre">policies</span> <span class="pre">to</span> <span class="pre">certificate</span></code> page, check the box for the policy you created, and click <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">Things</span></code> to complete the creation process.</p></li>
+<li><p>Вернитесь на страницу «Прикрепить политики к сертификату», установите флажок напротив созданной вами политики и нажмите «Создать элементы», чтобы завершить процесс создания.</p></li>
 </ul>
 <figure class="align-center">
 <img alt="../../media/awsiot-things6.png" src="../../media/awsiot-things6.png" />
 </figure>
 <ul class="simple">
-<li><p>First download the certificate and private key, then click <code class="docutils literal notranslate"><span class="pre">Done</span></code> to complete the Create Things process.</p></li>
+<li><p>Сначала загрузите сертификат и закрытый ключ, затем нажмите «Готово», чтобы завершить процесс создания объектов.</p></li>
 </ul>
 <figure class="align-center">
 <img alt="../../media/awsiot-things7.png" src="../../media/awsiot-things7.png" />
@@ -549,48 +556,48 @@ document.write(`
 </ul>
 </section>
 <section id="configure-scanner">
-<h2>Configure Scanner<a class="headerlink" href="#configure-scanner" title="Ссылка на этот заголовок">#</a></h2>
+<h2>Настройка сканера<a class="headerlink" href="#configure-scanner" title="Ссылка на этот заголовок">#</a></h2>
 <section id="set-mqtt-mode">
-<h3>Set MQTT mode<a class="headerlink" href="#set-mqtt-mode" title="Ссылка на этот заголовок">#</a></h3>
+<h3>Установить режим MQTT<a class="headerlink" href="#set-mqtt-mode" title="Ссылка на этот заголовок">#</a></h3>
 <figure class="align-center">
 <img alt="../../media/AT2BMQTTMODE3D4.png" src="../../media/AT2BMQTTMODE3D4.png" />
 </figure>
 </section>
 <section id="set-mqtt-port-to-8883">
-<h3>Set MQTT Port to 8883<a class="headerlink" href="#set-mqtt-port-to-8883" title="Ссылка на этот заголовок">#</a></h3>
+<h3>Установите порт MQTT на 8883.<a class="headerlink" href="#set-mqtt-port-to-8883" title="Ссылка на этот заголовок">#</a></h3>
 <figure class="align-center">
 <img alt="../../media/AT2BMQTTPORT3D8883.png" src="../../media/AT2BMQTTPORT3D8883.png" />
 </figure>
 </section>
 <section id="set-client-certificate">
-<h3>Set Client Certificate<a class="headerlink" href="#set-client-certificate" title="Ссылка на этот заголовок">#</a></h3>
+<h3>Установить клиентский сертификат<a class="headerlink" href="#set-client-certificate" title="Ссылка на этот заголовок">#</a></h3>
     <iframe src="../../plugins/wifi-mqtts-Certificate.html" height="700px" width="100%"></iframe>
 <div class="admonition tip">
 <p class="admonition-title">Совет</p>
-<p>If the QR code is too large, we recommend taking a screenshot and sending it to your phone. Then, turn your phone screen brightness to maximum before scanning it with a barcode scanner.</p>
+<p>Если QR-код слишком большой, рекомендуем сделать снимок экрана и отправить его на телефон. Затем уменьшите яркость экрана телефона до максимума, прежде чем сканировать его с помощью сканера штрих-кодов.</p>
 </div>
 </section>
 <section id="set-private-key">
-<h3>Set Private Key<a class="headerlink" href="#set-private-key" title="Ссылка на этот заголовок">#</a></h3>
+<h3>Установить закрытый ключ<a class="headerlink" href="#set-private-key" title="Ссылка на этот заголовок">#</a></h3>
     <iframe src="../../plugins/wifi-mqtts-PrivateKey.html" height="700px" width="100%"></iframe>
 <div class="admonition tip">
 <p class="admonition-title">Совет</p>
-<p>If the QR code is too large, we recommend taking a screenshot and sending it to your phone. Then, turn your phone screen brightness to maximum before scanning it with a barcode scanner.</p>
+<p>Если QR-код слишком большой, рекомендуем сделать снимок экрана и отправить его на телефон. Затем уменьшите яркость экрана телефона до максимума, прежде чем сканировать его с помощью сканера штрих-кодов.</p>
 </div>
 </section>
 <section id="configure-wifi-and-broker">
-<h3>Configure WiFi and Broker<a class="headerlink" href="#configure-wifi-and-broker" title="Ссылка на этот заголовок">#</a></h3>
+<h3>Настройка Wi-Fi и брокера<a class="headerlink" href="#configure-wifi-and-broker" title="Ссылка на этот заголовок">#</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Совет</p>
-<p>After entering the corresponding WiFi information and service address, the scanner will actively connect to AWS IoT. Once the connection is successful, the green indicator light on the scanner will stay on.</p>
+<p>После ввода соответствующей информации о сети Wi-Fi и адреса сервиса сканер активно подключится к AWS IoT. После успешного подключения зеленый индикатор на сканере будет гореть постоянно.</p>
 </div>
     <iframe src="../../plugins/wifi-mqtts.html" height="1000px" width="100%"></iframe></section>
 </section>
 <section id="mqtt-test-client">
-<h2>MQTT test client<a class="headerlink" href="#mqtt-test-client" title="Ссылка на этот заголовок">#</a></h2>
+<h2>Тестовый клиент MQTT<a class="headerlink" href="#mqtt-test-client" title="Ссылка на этот заголовок">#</a></h2>
 <ul class="simple">
-<li><p>Click on <a class="reference external" href="https://us-east-1.console.aws.amazon.com/iot/home?region=us-east-1#/test">MQTT test client</a> to enter the page.</p></li>
-<li><p>After entering the topic you want to subscribe to and clicking <code class="docutils literal notranslate"><span class="pre">Subscribe</span></code>, use the barcode scanner to scan the barcode and receive the data from the scanner.</p></li>
+<li><p>Нажмите на <a class="reference external" href="https://us-east-1.console.aws.amazon.com/iot/home?region=us-east-1#/test">MQTT test client</a>, чтобы перейти на страницу.</p></li>
+<li><p>После выбора темы, на которую вы хотите подписаться, и нажатия кнопки «Подписаться», воспользуйтесь сканером штрихкодов, чтобы отсканировать штрихкод и получить данные со сканера.</p></li>
 </ul>
 <figure class="align-center">
 <img alt="../../media/awsiot-test.png" src="../../media/awsiot-test.png" />
@@ -643,16 +650,16 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#register-your-device-on-the-aws-iot-page-to-obtain-the-client-certificate-and-private-key">Register your device on the AWS IoT page to obtain the client certificate and private key.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-scanner">Configure Scanner</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-mqtt-mode">Set MQTT mode</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-mqtt-port-to-8883">Set MQTT Port to 8883</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-client-certificate">Set Client Certificate</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-private-key">Set Private Key</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-wifi-and-broker">Configure WiFi and Broker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#register-your-device-on-the-aws-iot-page-to-obtain-the-client-certificate-and-private-key">Зарегистрируйте свое устройство на странице AWS IoT, чтобы получить клиентский сертификат и закрытый ключ.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-scanner">Настройка сканера</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-mqtt-mode">Установить режим MQTT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-mqtt-port-to-8883">Установите порт MQTT на 8883.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-client-certificate">Установить клиентский сертификат</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-private-key">Установить закрытый ключ</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-wifi-and-broker">Настройка Wi-Fi и брокера</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mqtt-test-client">MQTT test client</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mqtt-test-client">Тестовый клиент MQTT</a></li>
 </ul>
   </nav></div>
 

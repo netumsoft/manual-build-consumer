@@ -5,3 +5,12 @@
 # locales
 locales/
 **/locales/
+
+# Generated static docs sidecar files that do not affect current HTML rendering/access
+# Tracked files must still be removed from the Git index separately, e.g. with `git rm --cached`
+**/*.map
+**/*.LICENSE.txt
+**/webpack-macros.html
+**/sbt-webpack-macros.html
+**/objects.inv
+**/tippy_*_cache.json
